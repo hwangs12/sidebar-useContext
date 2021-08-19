@@ -1,8 +1,8 @@
-import React, { useContext } from "react";
+import React from "react";
 import { FaTimes } from "react-icons/fa";
-import { SidebarContext } from "./App";
+import { useGlobalContext } from "./context";
 const Modal = () => {
-	const { toggleModal, modalOpen } = useContext(SidebarContext);
+	const { toggleModal, modalOpen } = useGlobalContext();
 
 	return (
 		<div className={`modal-overlay ${modalOpen && "show-modal"}`}>
