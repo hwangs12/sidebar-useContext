@@ -1,7 +1,9 @@
 import React, { useState, useContext } from "react";
 
-const [sideBarOpen, setSideBarOpen] = useState(false);
+const AppContext = React.createContext();
 
-const toggleSideBar = () => {
-	setSideBarOpen(!sideBarOpen);
+const AppProvider = ({ children }) => {
+	return <AppContext.Provider>{children}</AppContext.Provider>;
 };
+
+export { AppContext, AppProvider };
